@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="custom.css" />
-    <link rel="stylesheet" href="root.css" />
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="tour.min.css">
+    <link rel="stylesheet" href="styles/custom.css" />
+    <link rel="stylesheet" href="styles/root.css" />
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/tour.min.css">
 </head>
 <body class="h-screen w-full">
-
     <main class="flex w-full h-full cm lightapp">
         <!-- Slider section -->
         <aside class="h-full relative">
@@ -42,13 +41,64 @@
                       <span class="text-base font-normal"> Desktop </span>
                     </a>
                   </li>
-                  <li class="all-tab">
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                  <li class="position">
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span id="All" class="text-base font-normal"> Recent </span>
-                    </a>
+                      <a
+                        class="w-full px-6 py-1 flex justify-between items-center bg-c-black rounded-r-xl"
+                        href="#"
+                      >
+                        <span class="text-c-yellow">Recent</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </a>
+                      <ul class="drop-list text-sm space-y-1">
+                        <li>
+                          <a
+                            href="#"
+                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            onclick="event.stopPropagation();"
+                          >
+                            <span>Account</span>
+                            
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="Privacy-settings.html"
+                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            onclick="event.stopPropagation();"
+                          >
+                            <span>Privacy settings</span>
+                            
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="Notification-settings.html"
+                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            onclick="event.stopPropagation();"
+                          >
+                            <span>Notification settings</span>
+                            
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="Orient-drop.html"
+                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            onclick="event.stopPropagation();"
+                          >
+                            <span>Orient drop</span>
+                            
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                   <li>
                     <a
@@ -159,16 +209,30 @@
             
             <!-- Modal Content -->
             <div class="p-4">
-                <div class="mb-4">
-                    <select id="groupSelect" class="mt-1 block w-full border border-gray-300 rounded-lg sm:text-sm h-8 pl-3">
-                        <option>Select group</option>
-                        <option>Sales dept.</option>
-                        <option>HR dept.</option>
-                    </select>   
+                <div class="pb-2 relative">
+                    <div id="customSelect" class="mt-1 block w-full border border-gray-300 rounded-lg sm:text-sm h-8 pl-3 cursor-pointer flex items-center justify-between">
+                        <span id="selectedText">Select group</span>
+                        <span class="pr-2 text-2xl"><i class="ri-arrow-down-s-line"></i></span>
+                    </div>
+                    <div id="dropdown" class="role absolute mt-1 w-full border border-gray-300 rounded-lg bg-white hidden">
+                        <label class="flex items-center p-2">
+                            <input type="checkbox" class="mr-2 d-checkbox" checked value="Sales dept." /> Sales dept.
+                        </label>
+                        <hr>
+                        <label class="flex items-center p-2">
+                            <input type="checkbox" class="mr-2 d-checkbox" value="Marketing dept." /> Marketing dept.
+                        </label>
+                        <hr>
+                        <label class="flex items-center p-2">
+                            <input type="checkbox" class="mr-2 d-checkbox" checked value="HR dept." /> HR dept.
+                        </label>
+                        
+                    </div>
                 </div>
                 
+                
                 <!-- Table -->
-                <div class="overflow-x-auto">
+                <div id="tableContainer" class="overflow-x-auto transition-all">
                     <table class="w-full text-left border-collapse border border-gray-200">
                         <thead class="bg-c-gray-4 role">
                             <tr>
@@ -374,33 +438,37 @@
                     </table>
                 </div>
             </div>
-            
-           
         </div>
-    </div>
-
-    <!-- Script for Modal -->
-    <script>
-        const openModalButton = document.getElementById('openModal');
-        const closeModalButtons = document.querySelectorAll('#closeModal, #closeFooter');
-        const modal = document.getElementById('modal');
-
-        openModalButton.addEventListener('click', () => {
-            modal.classList.remove('hidden');
-        });
-
-        closeModalButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                modal.classList.add('hidden');
-            });
-        });
-    </script>
-
-
-
-              </div>
-           </div>
+    </div>              
     </main>
+    <script>
+        const customSelect = document.getElementById('customSelect');
+const dropdown = document.getElementById('dropdown');
+const selectedText = document.getElementById('selectedText');
+const tableContainer = document.getElementById('tableContainer');
 
+customSelect.addEventListener('click', () => {
+    dropdown.classList.toggle('hidden');
+    
+    if (!dropdown.classList.contains('hidden')) {
+        // Add space when dropdown is open
+        tableContainer.style.marginTop = `${dropdown.offsetHeight}px`;
+    } else {
+        // Reset space when dropdown is closed
+        tableContainer.style.marginTop = '0px';
+    }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!customSelect.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+        tableContainer.style.marginTop = '0px';
+    }
+});
+
+    </script>
+    <script src="script/sidebar.js"></script>
+    <script src="script/orient-drop.js"></script>
 </body>
 </html>
