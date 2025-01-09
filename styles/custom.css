@@ -1489,3 +1489,17 @@ input[type="button"]:focus {
 .bg-c-table-yellow{
   background: #f9f5e0;
 }
+
+
+/* ***************************Added stop share icone***************** */
+/* Class for dynamic icon */
+.dynamic-icon {
+  width: 20px;               /* Set the size of the icon */
+  height: 20px;              /* Set the height of the icon */
+  background-image: url('../images/stop-share.png');  /* Replace with the actual image URL */
+  background-size: cover;    /* Make the image cover the area of the icon */
+  background-position: center;  /* Center the image */
+  display: inline-block;      /* Ensure it behaves like an inline element */
+  transition: all 0.3s ease;  /* Smooth transition for dynamic effects */
+}
+
