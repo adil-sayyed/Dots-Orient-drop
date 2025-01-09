@@ -11,36 +11,23 @@
 </head>
 <body class="h-screen w-full">
     <main class="flex w-full h-full cm lightapp">
-        <!-- Slider section -->
         <aside class="h-full relative">
-            <input type="checkbox" class="hidden" id="sidebar-toggle" />
-            <label
-              for="sidebar-toggle"
-              class="absolute lg:hidden top-6 -right-8 px-1"
-            >
-               <i class="ri-bar-chart-horizontal-line"></i>
-            </label>
-            <div class="h-full sidebar">
-               <div class="sidebar-container">
-              <div class="p-6">
-                  <a href="#">
-                    <img class="w-20" src="/images/logo.png" alt="Dots Logo" />
+          <input type="checkbox" class="hidden" id="sidebar-toggle" />
+          <label
+            for="sidebar-toggle"
+            class="absolute lg:hidden top-1 -right-9 md:-right-10 px-1"
+          >
+            <i class="ri-bar-chart-horizontal-line"></i>
+          </label>
+          <div class="h-full sidebar">
+            <div class="sidebar-container">
+              <div class="p-4">
+                <a href="index.html" class="flex w-20"
+                  ><img class="w-20" src="/images/logo.png" alt="Dots Logo"
+                /></a>
               </div>
               <div class="sidebar-content">
                 <ul class="space-y-1">
-                  <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
-                    >
-                      <span  class="text-base font-normal">Favourites</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center" href="#">
-                      <span class="text-base font-normal"> Desktop </span>
-                    </a>
-                  </li>
                   <li class="position">
                     <div
                       role="button"
@@ -48,97 +35,224 @@
                       class="drop-menu cursor-pointer rounded-r-lg"
                     >
                       <a
-                        class="w-full px-6 py-1 flex justify-between items-center bg-c-black rounded-r-xl"
+                        class="w-full px-6 py-1 flex justify-between items-center  rounded-r-xl"
                         href="#"
                       >
-                        <span class="text-c-yellow">Recent</span>
+                        <span>Position</span>
                         <i
                           class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
                         ></i>
                       </a>
                       <ul class="drop-list text-sm space-y-1">
-                        <li class="py-1">
+                        <li class="starred">
                           <a
-                            href="account.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            id="starred-link"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center subdrop"
+                            onclick="event.stopPropagation();toggleSubDropMenu();"
+                          >
+                            <span>Starred</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl subdrop-right-arrow"
+                            ></i>
+                          </a>
+                          <ul
+                            class="drop-list text-sm space-y-1 hidden"
+                            id="subdrop-menu"
+                          >
+                            <li>
+                              <a
+                                href="#"
+                                class="block py-1 pl-12 pr-10 rounded-r-md w-full flex justify-between items-center"
+                                onclick="event.stopPropagation();"
+                              >
+                                <span>submenu1</span>
+                                <i
+                                  class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                                ></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="block py-1 pl-12 pr-10 rounded-r-md w-full flex justify-between items-center"
+                                onclick="event.stopPropagation();"
+                              >
+                                <span>submenu2</span>
+                                <i
+                                  class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                                ></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                             onclick="event.stopPropagation();"
                           >
-                            <span>Account</span>
-                            
+                            <span>Personal</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
                         <li>
                           <a
-                            href="Privacy-settings.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            href="#"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                             onclick="event.stopPropagation();"
                           >
-                            <span>Privacy settings</span>
-                            
+                            <span>Group</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
                         <li>
                           <a
-                            href="Notification-settings.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            href="#"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                             onclick="event.stopPropagation();"
                           >
-                            <span>Notification settings</span>
-                            
+                            <span>Collaborate with me</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
+                      </ul>
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
+                    >
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Tools </span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                      <ul class="drop-list text-sm space-y-1">
                         <li>
                           <a
-                            href="orient-drop.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
-                            onclick="event.stopPropagation();"
+                            href="filemanager-linkshare.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                           >
-                            <span>Orient drop</span>
-                            
+                            <span>Link Sharing</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> Downloads </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>File type</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> File </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Tags</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> Documents </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Network Driver</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> Applications </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Orient Drop </span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                      <ul class="drop-list text-sm space-y-1">
+                        <li>
+                          <a
+                            href="share.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
+                          >
+                            <span>Sharing</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="received.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
+                          >
+                            <span>received </span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
-            </div>
-           
-          </aside>         
-    </main>
+          </div>
+        </aside>
+      </main>
     <script src="script/sidebar.js"></script>
     
 </body>
