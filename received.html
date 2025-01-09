@@ -10,7 +10,6 @@
   </head>
   <body class="h-screen w-full">
     <main class="flex w-full h-full cm lightapp">
-        
       <!-- Slider section -->
       <aside class="h-full relative">
         <input type="checkbox" class="hidden" id="sidebar-toggle" />
@@ -255,7 +254,6 @@
       <!-- Main Content -->
       <div class="right-container flex-grow border h-100 main">
         <div class="flex w-full h-full flex-col content">
-          
           <!-- TopTaskbar in desktops -->
           <div class="p-6">
             <div class="flex items-center gap-4">
@@ -415,42 +413,207 @@
           </div>
           <!-- topTaskbar setting -->
           <div class="border-b border-c-light-gray1 flex justify-between items-center md:flex text-c-black actionbar">
-            <div class="flex ml-6 gap-x-5 lg:gap-x-4 xl:gap-x-6 my-2 context-menulist">
-              <!-- Upload Section -->
-              <div class="relative flex items-center upload">
-                <button id="uploadfile" class="flex items-center gap-2 px-4 rounded">
-                  <i class="ri-upload-2-line text-lg"></i>
-                  <span>Upload</span>
+            <div class="flex ml-6 gap-x-5 lg:gap-x-4 my-1 xl:gap-x-6 context-menulist">
+              <!-- Sort Menu -->
+              <div class="relative flex items-center clickmenu sort">
+                <button class="flex items-center dropdown-btn">
+                  <i class="ri-arrow-up-down-line ri-lg mt-1"></i>
+                  <span class="ml-1 mt-1">Sort</span>
+                  <i class="ri-arrow-drop-down-line ri-lg mt-1"></i>
                 </button>
+                <div
+                  id="sort-dropdown"
+                  class="dropdown-option absolute top-full mt-2 z-10 bg-c-white border border-c-medium-gray rounded-lg shadow-md hidden w-full md:w-40 lg:w-44 xl:w-68"
+                >
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="name"
+                    >
+                      <span>Name</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingname hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="extension"
+                    >
+                      <span>Type</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingextension hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="created_at"
+                    >
+                      <span>Creation</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingcreated_at hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="updated_at"
+                    >
+                      <span>Modification</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingupdated_at hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="asc"
+                    >
+                      <span>Ascending</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingasc 1"
+                        data-key="sortorder"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="desc"
+                    >
+                      <span>Descending</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingdesc hidden"
+                        data-key="sortorder"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <!-- Stop Sharing Section -->
-              <div class="relative flex items-center upload">
-                <a href="#">
-                  <button class="flex items-center gap-2 px-4 rounded">
-                    <i class="ri-close-circle-fill text-lg"></i>
-                    <span>Stop Sharing</span>
-                  </button>
-                </a>
+          
+              <!-- Resize Menu -->
+              <div class="relative flex items-center resize">
+                <button class="flex items-center dropdown-btn">
+                  <i class="ri-arrow-up-down-line ri-lg mt-1"></i>
+                  <span class="ml-1 mt-1">Resize</span>
+                  <i class="ri-arrow-drop-down-line ri-lg mt-1"></i>
+                </button>
+                <div
+                  id="resize-dropdown"
+                  class="dropdown-option absolute top-full mt-2 z-10 bg-c-white border border-c-medium-gray rounded-lg shadow-md hidden w-full md:w-40 lg:w-44 xl:w-68"
+                >
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item resizeFunction"
+                      data-type="tiny"
+                    >
+                      <i class="ri-gallery-view-2 text-sm w-1/4"></i>
+                      <span>Tiny Icon</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 resizecheck resizetiny hidden"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item resizeFunction"
+                      data-type="small"
+                    >
+                      <i class="ri-gallery-view-2 text-sm w-1/4"></i>
+                      <span>Small Icon</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 resizecheck resizesmall hidden"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item resizeFunction"
+                      data-type="medium"
+                    >
+                      <i class="ri-gallery-view-2 text-sm w-1/4"></i>
+                      <span>Medium Icon</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 resizecheck resizemedium hidden"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- View Menu -->
+              <div class="relative flex items-center view">
+                <button class="flex items-center dropdown-btn" onclick="toggleView()">
+                  <i class="ri-gallery-view-2 ri-lg mt-1"></i>
+                  <span class="ml-1 mt-1">View</span>
+                  <i class="ri-arrow-drop-down-line ri-lg mt-1"></i>
+                </button>
+                <div
+                  id="view-dropdown"
+                  class="dropdown-option absolute top-full mt-2 z-10 bg-c-white border border-c-medium-gray rounded-lg shadow-md hidden w-full md:w-44 xl:w-68"
+                >
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item clickmenu listFunction"
+                      data-type=""
+                    >
+                      <i class="ri-list-check ri-lg w-1/4"></i>
+                      <span>List View</span>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item clickmenu tileFunction"
+                      data-type=""
+                    >
+                      <i class="ri-grid-fill w-1/4"></i>
+                      <span>Grid View</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+
+          
+
 
           <!--grid container -->
-          <div
-          id="gridContainer"
-          class="grid grid-cols-4 sm:grid-cols-10 gap-4 transition-all duration-300 p-2 pt-3 overflow-y-auto"
-        >
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
+          <div id="gridContainer" class="grid grid-cols-4 sm:grid-cols-10 gap-4 transition-all duration-300 p-2 pt-3 overflow-y-auto">
+        
+            <div class="relative group w-full md:w-full max-w-sm">
+              <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
+              <div class="left-0 right-0 bottom-0 text-center">
+                <p class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal">
+                  Test docx
+                </p>
+              </div>
+              <div class="absolute bottom-2 right-2  p-1 rounded-full">
+                <i class="ri-share-forward-fill text-green-500 text-lg"></i>
+              </div>
             </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
+            
+          <div class="relative group w-full md:w-full max-w-sm has-tooltip">
             <img src="images/word.svg" alt="Your Image" class="w-3/4" />
             <div class="left-0 right-0 bottom-0 text-center">
               <p
@@ -459,6 +622,12 @@
                 Test docx
               </p>
             </div>
+          </div>
+          <div class="absolute py-1 px-2 text-start text-xs tooltip left-1/3 top-60 z-10 bg-white border rounded-md border-c-yellow z-0 font-normal">
+            <p><strong>File Name:</strong> Test.doc</p>
+            <p><strong>File Size:</strong> 5.1 MB</p>
+            <p><strong>Shared By:</strong> Jane Smith</p>
+            <p><strong>Shared Date:</strong> 12/25/2024</p>
           </div>
           <div class="relative group w-full md:w-full max-w-sm">
             <img src="images/pptx.png" alt="Your Image" class="w-3/4" />
@@ -490,6 +659,7 @@
               </p>
             </div>
           </div>
+          
           <div class="relative group w-full md:w-full max-w-sm">
             <img src="images/ppt.png" alt="Your Image" class="w-3/4" />
             <div class="left-0 right-0 bottom-0 text-center">
@@ -500,236 +670,133 @@
               </p>
             </div>
           </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/pptx.png" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/pptx.png" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/ppt.png" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal mt-1"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
+          
+          
         </div>
 
-         <!-- Upload popup -->
-        <div id="uploadModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center">
-          <div class="popup-content bg-white rounded-lg shadow-lg p-6 w-full max-w-2xl">
-            
-            <!-- Header -->
-            <div class="flex justify-between items-center mb-4">
-              <h2 class="text-xl font-bold">Local Upload</h2>
-              <button id="close-popup" class="text-2xl">
+          <!-- Upload popup -->
+          <div
+            id="uploadModal"
+            class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center"
+          >
+            <div
+              class="popup-content bg-white rounded-lg shadow-lg p-6 w-full max-w-2xl"
+            >
+              <!-- Header -->
+              <div class="flex justify-between items-center mb-4">
+                <h2 class="text-xl font-bold">Local Upload</h2>
+                <button id="close-popup" class="text-2xl">
                   <i class="ri-close-line"></i>
-              </button>
-          </div>
+                </button>
+              </div>
 
-          <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-              <h2 class="text-2xl font-bold mb-2">File Upload</h2>
-              
-              <div id="dropzone" class="border-2 border-dashed border-gray-300 p-6 rounded-lg text-center">
+              <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-2">File Upload</h2>
+
+                <div
+                  id="dropzone"
+                  class="border-2 border-dashed border-gray-300 p-6 rounded-lg text-center"
+                >
                   Drag and drop files here or click to upload
-              </div>
-              <input type="file" id="file-input" class="hidden" multiple>
-              <div id="file-list-container" class="mt-4 space-y-2 hidden">
+                </div>
+                <input type="file" id="file-input" class="hidden" multiple />
+                <div id="file-list-container" class="mt-4 space-y-2 hidden">
                   <table class="min-w-full bg-white">
-                      <thead>
-                          <tr>
-                              <th class="py-2 px-4 text-left">Name</th>
-                              <th class="py-2 px-4 text-left">Size</th>
-                              <th class="py-2 px-4 text-left">Progress</th>
-                          </tr>
-                      </thead>
-                      <tbody id="file-list"></tbody>
+                    <thead>
+                      <tr>
+                        <th class="py-2 px-4 text-left">Name</th>
+                        <th class="py-2 px-4 text-left">Size</th>
+                        <th class="py-2 px-4 text-left">Progress</th>
+                      </tr>
+                    </thead>
+                    <tbody id="file-list"></tbody>
                   </table>
+                </div>
               </div>
-          </div>  
-        </div>  
-        </div> 
+            </div>
+          </div>
         </div>
       </div>
     </main>
     <script>
-      const openModal = document.getElementById('uploadfile');
-      const closeModal = document.getElementById('close-popup');
-      const modals = document.getElementById('uploadModal');
-      const dropzone = document.getElementById('dropzone');
-      const fileInput = document.getElementById('file-input');
-      const fileListContainer = document.getElementById('file-list-container');
-      const fileList = document.getElementById('file-list');
-    
+      const openModal = document.getElementById("uploadfile");
+      const closeModal = document.getElementById("close-popup");
+      const modals = document.getElementById("uploadModal");
+      const dropzone = document.getElementById("dropzone");
+      const fileInput = document.getElementById("file-input");
+      const fileListContainer = document.getElementById("file-list-container");
+      const fileList = document.getElementById("file-list");
+
       // Open modal
-      openModal.addEventListener('click', () => {
-        modals.classList.remove('hidden');
-        modals.classList.add('flex');
+      openModal.addEventListener("click", () => {
+        modals.classList.remove("hidden");
+        modals.classList.add("flex");
       });
-    
+
       // Close modal
-      closeModal.addEventListener('click', () => {
-        modals.classList.add('hidden');
-        modals.classList.remove('flex');
+      closeModal.addEventListener("click", () => {
+        modals.classList.add("hidden");
+        modals.classList.remove("flex");
       });
-    
+
       // Close modal when clicking outside the modal content
-      window.addEventListener('click', (event) => {
+      window.addEventListener("click", (event) => {
         if (event.target === modals) {
-          modals.classList.add('hidden');
-          modals.classList.remove('flex');
+          modals.classList.add("hidden");
+          modals.classList.remove("flex");
         }
       });
-    
+
       // Click on dropzone to open file input
-      dropzone.addEventListener('click', () => {
+      dropzone.addEventListener("click", () => {
         fileInput.click();
       });
-    
+
       // Handle file selection
-      fileInput.addEventListener('change', (event) => {
+      fileInput.addEventListener("change", (event) => {
         const files = event.target.files;
         updateFileList(files);
       });
-    
+
       // Drag-and-drop functionality
-      dropzone.addEventListener('dragover', (event) => {
+      dropzone.addEventListener("dragover", (event) => {
         event.preventDefault();
-        dropzone.classList.add('bg-gray-200');
+        dropzone.classList.add("bg-gray-200");
       });
-    
-      dropzone.addEventListener('dragleave', () => {
-        dropzone.classList.remove('bg-gray-200');
+
+      dropzone.addEventListener("dragleave", () => {
+        dropzone.classList.remove("bg-gray-200");
       });
-    
-      dropzone.addEventListener('drop', (event) => {
+
+      dropzone.addEventListener("drop", (event) => {
         event.preventDefault();
-        dropzone.classList.remove('bg-gray-200');
+        dropzone.classList.remove("bg-gray-200");
         const files = event.dataTransfer.files;
         updateFileList(files);
       });
-    
+
       // Update file list
       function updateFileList(files) {
-        fileList.innerHTML = '';
-        fileListContainer.classList.remove('hidden');
-    
+        fileList.innerHTML = "";
+        fileListContainer.classList.remove("hidden");
+
         Array.from(files).forEach((file) => {
-          const row = document.createElement('tr');
+          const row = document.createElement("tr");
           row.innerHTML = `
             <td class="py-2 px-4">${file.name}</td>
             <td class="py-2 px-4">${(file.size / 1024).toFixed(2)} KB</td>
             <td class="py-2 px-4">Uploading...</td>
           `;
           fileList.appendChild(row);
-    
+
           // Simulate upload progress (you can replace this with real upload logic)
           setTimeout(() => {
-            row.querySelector('td:last-child').textContent = 'Completed';
+            row.querySelector("td:last-child").textContent = "Completed";
           }, 1000);
         });
       }
-
     </script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script/sidebar.js"></script>
-
   </body>
 </html>

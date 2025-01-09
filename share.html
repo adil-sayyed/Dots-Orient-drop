@@ -415,7 +415,7 @@
 
           <!-- topTaskbar Buttons -->
           <div class="border-b border-c-light-gray1 flex justify-between items-center md:flex text-c-black actionbar">
-            <div class="flex ml-6 gap-x-5 lg:gap-x-4 xl:gap-x-6 my-2 context-menulist">
+            <div class="flex ml-6 gap-x-5 lg:gap-x-4 xl:gap-x-6 my-1 context-menulist">
               <!-- Upload Section -->
               <div class="relative flex items-center upload">
                 <button id="uploadfile" class="flex items-center gap-2 px-4 rounded">
@@ -433,32 +433,215 @@
                   </button>
                 </a>
               </div>
+              <!-- Sort Menu -->
+              <div class="relative flex items-center clickmenu sort">
+                <button class="flex items-center dropdown-btn">
+                  <i class="ri-arrow-up-down-line ri-lg mt-1"></i>
+                  <span class="ml-1 mt-1">Sort</span>
+                  <i class="ri-arrow-drop-down-line ri-lg mt-1"></i>
+                </button>
+                <div
+                  id="sort-dropdown"
+                  class="dropdown-option absolute top-full mt-2 z-10 bg-c-white border border-c-medium-gray rounded-lg shadow-md hidden w-full md:w-40 lg:w-44 xl:w-68"
+                >
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="name"
+                    >
+                      <span>Name</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingname hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="extension"
+                    >
+                      <span>Type</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingextension hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="created_at"
+                    >
+                      <span>Creation</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingcreated_at hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="updated_at"
+                    >
+                      <span>Modification</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingupdated_at hidden"
+                        data-key="sortby"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="asc"
+                    >
+                      <span>Ascending</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingasc 1"
+                        data-key="sortorder"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item sortFunction"
+                      data-type="desc"
+                    >
+                      <span>Descending</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 sortingcheck sortingdesc hidden"
+                        data-key="sortorder"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Resize Menu -->
+              <div class="relative flex items-center resize">
+                <button class="flex items-center dropdown-btn">
+                  <i class="ri-arrow-up-down-line ri-lg mt-1"></i>
+                  <span class="ml-1 mt-1">Resize</span>
+                  <i class="ri-arrow-drop-down-line ri-lg mt-1"></i>
+                </button>
+                <div
+                  id="resize-dropdown"
+                  class="dropdown-option absolute top-full mt-2 z-10 bg-c-white border border-c-medium-gray rounded-lg shadow-md hidden w-full md:w-40 lg:w-44 xl:w-68"
+                >
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item resizeFunction"
+                      data-type="tiny"
+                    >
+                      <i class="ri-gallery-view-2 text-sm w-1/4"></i>
+                      <span>Tiny Icon</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 resizecheck resizetiny hidden"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item resizeFunction"
+                      data-type="small"
+                    >
+                      <i class="ri-gallery-view-2 text-sm w-1/4"></i>
+                      <span>Small Icon</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 resizecheck resizesmall hidden"
+                      ></i>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item resizeFunction"
+                      data-type="medium"
+                    >
+                      <i class="ri-gallery-view-2 text-sm w-1/4"></i>
+                      <span>Medium Icon</span>
+                      <i
+                        class="ri-check-line pr-3 ri-lg mt-1 resizecheck resizemedium hidden"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- View Menu -->
+              <div class="relative flex items-center view">
+                <button class="flex items-center dropdown-btn" onclick="toggleView()">
+                  <i class="ri-gallery-view-2 ri-lg mt-1"></i>
+                  <span class="ml-1 mt-1">View</span>
+                  <i class="ri-arrow-drop-down-line ri-lg mt-1"></i>
+                </button>
+                <div
+                  id="view-dropdown"
+                  class="dropdown-option absolute top-full mt-2 z-10 bg-c-white border border-c-medium-gray rounded-lg shadow-md hidden w-full md:w-44 xl:w-68"
+                >
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item clickmenu listFunction"
+                      data-type=""
+                    >
+                      <i class="ri-list-check ri-lg w-1/4"></i>
+                      <span>List View</span>
+                    </a>
+                  </div>
+                  <div class="hover-bg-c-yellow rounded-t-lg">
+                    <a
+                      href="#"
+                      class="flex items-center block p-2 pl-4 dropdown-item clickmenu tileFunction"
+                      data-type=""
+                    >
+                      <i class="ri-grid-fill w-1/4"></i>
+                      <span>Grid View</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           
             <!-- Right Section: Settings Module -->
-            <div class="py-2 pr-8">
+            <div class="pr-8">
               <button id="setting" class="flex items-center">
                 <i class="ri-settings-3-fill text-2xl"></i>
               </button>
+              <div
+                class="absolute py-1 px-2 text-start text-xs tooltip -bottom-8 right-5 z-10 bg-white border rounded-md border-c-yellow z-0 font-normal"
+              >
+                Setting
+              </div>
             </div>
           </div>
           
             <!--grid container -->
-          <div
-          id="gridContainer"
-          class="grid grid-cols-4 sm:grid-cols-10 gap-4 transition-all duration-300 p-2 pt-3 overflow-y-auto"
-        >
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
+          <div id="gridContainer" class="grid grid-cols-4 sm:grid-cols-10 gap-4 transition-all duration-300 p-2 pt-3 overflow-y-auto">
+        
+            <div class="relative group w-full md:w-full max-w-sm">
+              <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
+              <div class="left-0 right-0 bottom-0 text-center">
+                <p class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal">
+                  Test docx
+                </p>
+              </div>
+              <div class="absolute bottom-2 right-2  p-1 rounded-full">
+                <i class="ri-share-forward-fill text-green-500 text-lg"></i>
+              </div>
             </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
+            
+          <div class="relative group w-full md:w-full max-w-sm has-tooltip">
             <img src="images/word.svg" alt="Your Image" class="w-3/4" />
             <div class="left-0 right-0 bottom-0 text-center">
               <p
@@ -467,6 +650,12 @@
                 Test docx
               </p>
             </div>
+          </div>
+          <div class="absolute py-1 px-2 text-start text-xs tooltip left-1/3 top-60 z-10 bg-white border rounded-md border-c-yellow z-0 font-normal">
+            <p><strong>File Name:</strong> Test.doc</p>
+            <p><strong>File Size:</strong> 5.1 MB</p>
+            <p><strong>Shared By:</strong> Jane Smith</p>
+            <p><strong>Shared Date:</strong> 12/25/2024</p>
           </div>
           <div class="relative group w-full md:w-full max-w-sm">
             <img src="images/pptx.png" alt="Your Image" class="w-3/4" />
@@ -498,6 +687,7 @@
               </p>
             </div>
           </div>
+          
           <div class="relative group w-full md:w-full max-w-sm">
             <img src="images/ppt.png" alt="Your Image" class="w-3/4" />
             <div class="left-0 right-0 bottom-0 text-center">
@@ -508,118 +698,10 @@
               </p>
             </div>
           </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/pptx.png" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/excel.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/word.svg" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/pptx.png" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
-          <div class="relative group w-full md:w-full max-w-sm">
-            <img src="images/ppt.png" alt="Your Image" class="w-3/4" />
-            <div class="left-0 right-0 bottom-0 text-center">
-              <p
-                class="whitespace-normal break-words text-ellipsis text-sm sm:text-xs md:text-base lg:text-normal mt-1"
-              >
-                Test docx
-              </p>
-            </div>
-          </div>
+          
+          
         </div>
-
+          
         <!-- pop-up Moduls -->
 
         <!-- Upload popup -->
