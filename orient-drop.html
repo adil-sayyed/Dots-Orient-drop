@@ -11,36 +11,23 @@
 </head>
 <body class="h-screen w-full">
     <main class="flex w-full h-full cm lightapp">
-        <!-- Slider section -->
         <aside class="h-full relative">
-            <input type="checkbox" class="hidden" id="sidebar-toggle" />
-            <label
-              for="sidebar-toggle"
-              class="absolute lg:hidden top-6 -right-8 px-1"
-            >
-               <i class="ri-bar-chart-horizontal-line"></i>
-            </label>
-            <div class="h-full sidebar">
-               <div class="sidebar-container">
-              <div class="p-6">
-                  <a href="index.html">
-                    <img class="w-20" src="/images/logo.png" alt="Dots Logo" />
+          <input type="checkbox" class="hidden" id="sidebar-toggle" />
+          <label
+            for="sidebar-toggle"
+            class="absolute lg:hidden top-1 -right-9 md:-right-10 px-1"
+          >
+            <i class="ri-bar-chart-horizontal-line"></i>
+          </label>
+          <div class="h-full sidebar">
+            <div class="sidebar-container">
+              <div class="p-4">
+                <a href="index.html" class="flex w-20"
+                  ><img class="w-20" src="/images/logo.png" alt="Dots Logo"
+                /></a>
               </div>
               <div class="sidebar-content">
                 <ul class="space-y-1">
-                  <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
-                    >
-                      <span  class="text-base font-normal">Favourites</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center" href="#">
-                      <span class="text-base font-normal"> Desktop </span>
-                    </a>
-                  </li>
                   <li class="position">
                     <div
                       role="button"
@@ -48,436 +35,349 @@
                       class="drop-menu cursor-pointer rounded-r-lg"
                     >
                       <a
-                        class="w-full px-6 py-1 flex justify-between items-center bg-c-black rounded-r-xl"
+                        class="w-full px-6 py-1 flex justify-between items-center  rounded-r-xl"
                         href="#"
                       >
-                        <span class="text-c-yellow">Recent</span>
+                        <span>Position</span>
                         <i
                           class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
                         ></i>
                       </a>
                       <ul class="drop-list text-sm space-y-1">
-                        <li class="py-1">
+                        <li class="starred">
                           <a
-                            href="account.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            id="starred-link"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center subdrop"
+                            onclick="event.stopPropagation();toggleSubDropMenu();"
+                          >
+                            <span>Starred</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl subdrop-right-arrow"
+                            ></i>
+                          </a>
+                          <ul
+                            class="drop-list text-sm space-y-1 hidden"
+                            id="subdrop-menu"
+                          >
+                            <li>
+                              <a
+                                href="#"
+                                class="block py-1 pl-12 pr-10 rounded-r-md w-full flex justify-between items-center"
+                                onclick="event.stopPropagation();"
+                              >
+                                <span>submenu1</span>
+                                <i
+                                  class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                                ></i>
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                class="block py-1 pl-12 pr-10 rounded-r-md w-full flex justify-between items-center"
+                                onclick="event.stopPropagation();"
+                              >
+                                <span>submenu2</span>
+                                <i
+                                  class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                                ></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <a
+                            href="#"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                             onclick="event.stopPropagation();"
                           >
-                            <span>Account</span>
-                            
+                            <span>Personal</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
                         <li>
                           <a
-                            href="Privacy-settings.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            href="#"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                             onclick="event.stopPropagation();"
                           >
-                            <span>Privacy settings</span>
-                            
+                            <span>Group</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
                         <li>
                           <a
-                            href="Notification-settings.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
+                            href="#"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                             onclick="event.stopPropagation();"
                           >
-                            <span>Notification settings</span>
-                            
+                            <span>Collaborate with me</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
+                      </ul>
+                    </div>
+                  </li>
+                  
+                  <li>
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
+                    >
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Tools </span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                      <ul class="drop-list text-sm space-y-1">
                         <li>
                           <a
-                            href="orient-drop.html"
-                            class="block py-2 px-8 rounded-r-md w-full flex justify-between items-center"
-                            onclick="event.stopPropagation();"
+                            href="filemanager-linkshare.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
                           >
-                            <span>Orient drop</span>
-                            
+                            <span>Link Sharing</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
                           </a>
                         </li>
                       </ul>
                     </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> Downloads </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>File type</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> File </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Tags</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> Documents </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Network Driver</span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                    </div>
                   </li>
                   <li>
-                    <a
-                      class="w-full px-6 py-3 rounded-r-lg block flex justify-between items-center"
-                      href="#"
+                    <div
+                      role="button"
+                      onclick="toggleDropMenu(this)"
+                      class="drop-menu cursor-pointer rounded-r-lg"
                     >
-                      <span class="text-base font-normal"> Applications </span>
-                    </a>
+                      <div
+                        class="w-full px-6 py-1 flex justify-between items-center"
+                        href="#"
+                      >
+                        <span>Orient Drop </span>
+                        <i
+                          class="ri-arrow-right-s-line text-c-yellow big-right-arrow text-2xl"
+                        ></i>
+                      </div>
+                      <ul class="drop-list text-sm space-y-1">
+                        <li>
+                          <a
+                            href="share.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
+                          >
+                            <span>Sharing</span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="received.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
+                          >
+                            <span>received </span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
+                          </a>
+                        </li>
+                        <li>
+                          <a
+                            href="orient-drop.html"
+                            class="block py-1 px-8 rounded-r-md w-full flex justify-between items-center"
+                          >
+                            <span>orient-drop </span>
+                            <i
+                              class="ri-arrow-right-s-line text-c-yellow text-2xl"
+                            ></i>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
                   </li>
                 </ul>
               </div>
             </div>
-            </div>
-           
-          </aside>
-          <!-- Main Content -->
-           <div class="right-container flex-grow border h-100 main">
-              <div class="flex w-full h-full flex-col content">
-                <!-- topTaskbar in desktops -->
-                <div class="py-4 w-full md:flex flex-col md:flex-row items-center gap-2 taskbar mt-16">
-                    
-                    <div class="flex bg-c-white rounded-md w-full md:w-16 h-8 justify-evenly ml-6 mb-4 md:mb-0">
-                      <button>
-                        <i class="ri-arrow-left-line ri-lg"></i>
-                      </button>
-                      <button>
-                        <i class="ri-arrow-right-line ri-lg text-c-gray-opaque"></i>
-                      </button>
-                    </div>
-                    <div class="flex items-center rounded-md overflow-hidden bg-c-white h-8 md:ml-6 md:w-61 lg:w-8/12 cursor-pointer">
-                      
-                      <button class="pt-3 pb-3 pl-4 hidden md:flex items-center justify-center border-r border-c-gray-opaque pr-3">
-                        <i class="ri-arrow-up-line ri-lg"></i>
-                      </button>
-                  
-                      
-                      <div class="flex items-center flex-grow flex-shrink overflow-x-auto scroll-x">
-                        <button class="flex items-center px-2">
-                          <i class="ri-home-4-line pr-2"></i>Resent
-                        </button>
-                      </div>
-                  
-                     
-                      <button class="pr-5 pt-3 pb-3 px-4 flex items-center justify-center">
-                        <i class="ri-star-line"></i>
-                      </button>
-                  
-                      
-                      <button class="pr-4 pt-3 pb-3 flex items-center justify-center">
-                        <i class="ri-loop-left-line"></i>
-                      </button>
-                    </div>
-                  
-                    
-                    <div class="flex items-center rounded-md overflow-hidden flex-shrink-0 flex-grow bg-c-white h-8 ml-7 mr-6 w-full md:w-2/12">
-                      <input
-                        type="text"
-                        class="pl-4 pt-2.5 pb-2.5 flex-shrink flex-grow border-none outline-none w-full"
-                        placeholder="Search"
-                      />
-                      <div class="pt-3 pb-3 pr-4 flex items-center justify-center">
-                        <i class="ri-search-line"></i>
-                      </div>
-                    </div>
-                  </div>
-                  
-                <!-- topTaskbar setting -->
-                <div class="py-2 w-full md:flex items-center justify-end bg-c-gray-3">
-                    <button class="pr-8" id="openModal">
-                        <i class="ri-settings-3-fill text-2xl"></i>
-                    </button>
-                </div>                
+          </div>
+        </aside>
 
-    <!-- Modal -->
-    <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-white rounded-lg w-11/12 md:w-2/3">
-            <!-- Modal Header -->
-            <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-lg font-bold"><i class="ri-settings-3-fill"></i> Orient drop</h2>
-                <button id="closeModal" class="text-gray-500 hover:text-gray-800">
-                    <i class="ri-close-fill text-2xl"></i>
-                </button>
-            </div>
-            
-            <!-- Modal Content -->
-            <div class="p-4">
-                <div class="pb-2 relative">
-                    <div id="customSelect" class="mt-1 block w-full border border-gray-300 rounded-lg sm:text-sm h-8 pl-3 cursor-pointer flex items-center justify-between">
-                        <span id="selectedText">Select group</span>
-                        <span class="pr-2 text-2xl"><i class="ri-arrow-down-s-line"></i></span>
-                    </div>
-                    <div id="dropdown" class="role absolute mt-1 w-full border border-gray-300 rounded-lg bg-white hidden">
-                        <label class="flex items-center p-2">
-                            <input type="checkbox" class="mr-2 d-checkbox" checked value="Sales dept." /> Sales dept.
-                        </label>
-                        <hr>
-                        <label class="flex items-center p-2">
-                            <input type="checkbox" class="mr-2 d-checkbox" value="Marketing dept." /> Marketing dept.
-                        </label>
-                        <hr>
-                        <label class="flex items-center p-2">
-                            <input type="checkbox" class="mr-2 d-checkbox" checked value="HR dept." /> HR dept.
-                        </label>
-                        
+        <div class="right-container flex-grow border h-100 main">
+            <div class="flex w-full h-full flex-col content">
+                <!-- Navbar -->
+                <div class="px-2 lg:px-5 py-6">
+                    <div class="flex items-center gap-4">
+                        <i class="ri-settings-3-fill ri-xl"></i>
+                        <span class="text-lg text-color-nav-black">System Setting</span>
                     </div>
                 </div>
-                
-                
-                <!-- Table -->
-                <div id="tableContainer" class="overflow-x-auto transition-all">
-                    <table class="w-full text-left border-collapse border border-gray-200">
-                        <thead class="bg-c-gray-4 role">
-                            <tr>
-                                <th class="border border-gray-300 px-4 py-2 text-center ">
-                                    <label class="flex items-center justify-center gap-2">
-                                        <input type="checkbox" class="d-checkbox "> Select all
-                                    </label>
-                                </th>
-                                <th class="border border-gray-300 px-4 py-2 text-center ">
-                                    <label class="flex items-center justify-center gap-2">
-                                        <input type="checkbox" class="d-checkbox"> View
-                                    </label>
-                                </th>
-                                <th class="border border-gray-300 px-4 py-2 text-center ">
-                                    <label class="flex items-center justify-center gap-2">
-                                        <input type="checkbox" checked class="d-checkbox"> Edit
-                                    </label>
-                                </th>
-                                <th class="border border-gray-300 px-4 py-2 text-center ">
-                                    <label class="flex items-center justify-center gap-2">
-                                        <input type="checkbox" class="d-checkbox"> Download
-                                    </label>
-                                </th>
-                                <th class="border border-gray-300 px-4 py-2 text-center ">
-                                    <label class="flex items-center justify-center gap-2">
-                                        <input type="checkbox" checked class="d-checkbox"> Delete
-                                    </label>
-                                </th>
-                            </tr>
-                        </thead>
-                        
-                        <tbody class="role">
-                          <tr class="bg-c-table-yellow">
-                            <th class="border border-gray-300 px-4 py-2 ">
-                                <label class="flex items-center justify-start gap-2">
-                                    <input type="checkbox" checked class="d-checkbox">
-                                    <span class="font-normal">Admin</span>
-                                </label>
-                            </th>
-                            <td class="border border-gray-300 px-4 py-2 text-center">
-                                <div class="flex justify-center items-center">
-                                    <input type="checkbox" class="d-checkbox">
-                                </div>
-                            </td>
-                            <td class="border border-gray-300 px-4 py-2 text-center">
-                                <div class="flex justify-center items-center">
-                                    <input type="checkbox" class="d-checkbox">
-                                </div>
-                            </td>
-                            <td class="border border-gray-300 px-4 py-2 text-center">
-                                <div class="flex justify-center items-center">
-                                    <input type="checkbox" checked class="d-checkbox">
-                                </div>
-                            </td>
-                            <td class="border border-gray-300 px-4 py-2 text-center">
-                                <div class="flex justify-center items-center">
-                                    <input type="checkbox" checked class="d-checkbox">
-                                </div>
-                            </td>
-                        </tr>
-                            <tr>
-                                <th class="border border-gray-300 px-4 py-2">
-                                    <label class="flex items-center justify-start gap-2">
-                                        <input type="checkbox" checked class="d-checkbox">
-                                        <span class="font-normal">User 1</span>
-                                    </label>
-                                </th>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" checked class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox"  class="d-checkbox">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <th class="border border-gray-300 px-4 py-2">
-                                    <label class="flex items-center justify-start gap-2">
-                                        <input type="checkbox" checked class="d-checkbox">
-                                        <span class="font-normal">User 2</span>
-                                    </label>
-                                </th>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" checked class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                              </tr>
-                            <tr class="bg-c-table-yellow">
-                                <th class="border border-gray-300 px-4 py-2">
-                                    <label class="flex items-center justify-start gap-2">
-                                        <input type="checkbox" class="d-checkbox">
-                                        <span class="font-normal">HR</span>
-                                    </label>
-                                </th>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox"  class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                                <td class="border border-gray-300 px-4 py-2 text-center">
-                                    <div class="flex justify-center items-center">
-                                        <input type="checkbox" class="d-checkbox">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                              <th class="border border-gray-300 px-4 py-2">
-                                  <label class="flex items-center justify-start gap-2">
-                                      <input type="checkbox"  class="d-checkbox">
-                                      <span class="font-normal">User 1</span>
-                                  </label>
-                              </th>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox" class="d-checkbox">
-                                  </div>
-                              </td>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox"  class="d-checkbox">
-                                  </div>
-                              </td>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox" class="d-checkbox">
-                                  </div>
-                              </td>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox"  class="d-checkbox">
-                                  </div>
-                              </td>
-                          </tr>
-                          <tr>
-                              <th class="border border-gray-300 px-4 py-2">
-                                  <label class="flex items-center justify-start gap-2">
-                                      <input type="checkbox"  class="d-checkbox">
-                                      <span class="font-normal">User 2</span>
-                                  </label>
-                              </th>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox" class="d-checkbox">
-                                  </div>
-                              </td>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox"  class="d-checkbox">
-                                  </div>
-                              </td>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox" class="d-checkbox">
-                                  </div>
-                              </td>
-                              <td class="border border-gray-300 px-4 py-2 text-center">
-                                  <div class="flex justify-center items-center">
-                                      <input type="checkbox" class="d-checkbox">
-                                  </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                          
-                        </table>
-                        <div class="flex justify-end mt-3">
-                          <button
-                            class="bg-c-black hover-bg-c-black text-white rounded-full w-32 py-2 text-sm"
-                          >
-                            Save
-                          </button>
-                          </div>
+                <!-- topTaskbar in desktop -->
+                <div class="pl-4 md:pl-6 py-4 pr-4 md:pr-6 w-full flex justify-between taskbar" >
+                    <div class="w-full sm:w-4/12 xl:w-6/12">
+                        <div class="flex items-center gap-1 sm:gap-2">
+                            <span class="text-c-light-black whitespace-nowrap font-normal">
+                                User Profile
+                            </span>
+                            <i class="ri-arrow-right-line ri-lg text-c-light-black"></i>
+                            <span id="navbar-title" class="font-semibold text-c-black w-48">
+                               Privacy setting
+                            </span>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Main Container -->
+              <div class="py-4 px-6">
+                <div class="tab-content ss-basics active " id="basic">
+                    <h3 class="font-medium text-lg">Orient-drop</h3>
+                    <hr>
+                    <form action="#" class="space-y-5 pt-4">
+
+                        <div class="flex flex-wrap gap-y-1">
+                            <div class="w-full md:w-1/3 xl:w-1/6">
+                                <label class="font-medium text-medium text-color-black-d">Visible:</label>
+                            </div>
+                            <div class="w-full  md:w-2/3 xl:w-5/6">
+                                <div class="flex flex-wrap gap-2 items-center">
+                                    <label for="front-end-Visible-one"
+                                        class="toggle-switch flex items-center cursor-pointer">
+                                        <div class="relative">
+                                            <input type="checkbox" id="front-end-Visible-one"
+                                                class="sr-only">
+                                            <div class="block toggle-bg w-14 h-7 rounded-full border"></div>
+                                            <div
+                                                class="dot absolute left-0.5 top-0.5 bg-white w-6 h-6 rounded-full transition shadow-lg">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="font-light text-sm text-c-gray-2 mt-1 w-full">
+                                        Click the toggle for visibility and activate orient-drop
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap gap-y-1 cs">
+                            <div class="w-full md:w-1/3 xl:w-1/6">
+                                <label class="font-medium text-medium text-color-black-d">Tagging:</label>
+                            </div>
+                            <div class="w-full flex gap-2 items-center md:w-2/3 xl:w-5/6">
+                                <div class="flex items-center gap-4">
+                                    <label for="login-to-desktop" class="flex items-center gap-2">
+                                        <input type="checkbox" class="d-checkbox" checked>
+                                        <span class="text-sm font-normal">Same group</span>
+                                    </label>
+
+                                    <label for="login-to-default-file" class="flex items-center gap-2">
+                                        <input type="checkbox" class="d-checkbox">
+                                        <span class="text-sm font-normal">Everyone</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr >
+
+                        <div class="flex flex-wrap gap-y-1">
+                            <div class="w-full md:w-1/3 xl:w-1/6">
+                                <label class="font-medium text-medium text-color-black-d">Visible:</label>
+                            </div>
+                            <div class="w-full  md:w-2/3 xl:w-5/6">
+                                <div class="flex flex-wrap gap-2 items-center">
+                                    <label for="front-end-Visible-second"
+                                        class="toggle-switch flex items-center cursor-pointer">
+                                        <div class="relative">
+                                            <input type="checkbox" id="front-end-Visible-second"
+                                                class="sr-only">
+                                            <div class="block toggle-bg w-14 h-7 rounded-full border"></div>
+                                            <div
+                                                class="dot absolute left-0.5 top-0.5 bg-white w-6 h-6 rounded-full transition shadow-lg">
+                                            </div>
+                                        </div>
+                                    </label>
+                                    <div class="font-light text-sm text-c-gray-2 mt-1 w-full">
+                                        Click the toggle for visibility and activate orient-drop
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr>    
+                        
+                    </form>
+                    <div class="flex py-6">
+                        <button type="submit"
+                            class="bg-c-black ml-auto text-white rounded-full px-8 py-2">Save</button>
+                    </div>
+                </div>
+              </div>
             </div>
         </div>
-    </div>   
-    </div>
-    </div>           
-    </main>
-    <script>
-        const customSelect = document.getElementById('customSelect');
-const dropdown = document.getElementById('dropdown');
-const selectedText = document.getElementById('selectedText');
-const tableContainer = document.getElementById('tableContainer');
 
-customSelect.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-    
-    if (!dropdown.classList.contains('hidden')) {
-        // Add space when dropdown is open
-        tableContainer.style.marginTop = `${dropdown.offsetHeight}px`;
-    } else {
-        // Reset space when dropdown is closed
-        tableContainer.style.marginTop = '0px';
-    }
-});
-
-// Close dropdown when clicking outside
-document.addEventListener('click', (e) => {
-    if (!customSelect.contains(e.target) && !dropdown.contains(e.target)) {
-        dropdown.classList.add('hidden');
-        tableContainer.style.marginTop = '0px';
-    }
-});
-
-    </script>
+      </main>
     <script src="script/sidebar.js"></script>
-    <script src="script/orient-drop.js"></script>
+    
 </body>
 </html>
