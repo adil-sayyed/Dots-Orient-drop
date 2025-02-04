@@ -883,317 +883,277 @@
           <!--setting Modal -->
           <div id="modal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center hidden">
             <div class="bg-white rounded-lg w-11/12 md:w-2/3">
-              <!-- Modal Header -->
-              <div class="flex justify-between items-center p-4 border-b">
-                <h2 class="text-lg font-bold">
-                  <i class="ri-settings-3-fill"></i> Orient drop
-                </h2>
-                <button
-                  id="closeModal"
-                  class="text-gray-500 hover:text-gray-800"
-                >
-                  <i class="ri-close-fill text-2xl"></i>
-                </button>
-              </div>
-
-              <!-- Modal Content -->
-              <div class="p-4">
-              
-
-                <div class="w-full ml-auto mb-4">
-                  <select
-                    class="w-full rounded-xl border border-gray-300 bg-white px-4 py-2 text-sm shadow-sm e cursor-pointer"
-                    
-                  >
-                    <option class="text-gray-400">Select group</option>
-                    <option value="1">Sales dept</option>
-                    <option value="2">Marketing dept</option>
-                    <option value="3"> HR dept</option>
-                  </select>
-                </div>
-                <!-- Table -->
-                <div id="tableContainer" class="overflow-x-auto transition-all">
-                  <table
-                    class="w-full text-left border-collapse border border-gray-200"
-                  >
-                    <thead class="bg-c-gray-4 role">
-                      <tr>
-                        <th
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <label class="flex items-center justify-center gap-2">
-                            <input type="checkbox" class="d-checkbox" /> Select
-                            all
-                          </label>
-                        </th>
-                        <th
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <label class="flex items-center justify-center gap-2">
-                            <input type="checkbox" class="d-checkbox" /> View
-                          </label>
-                        </th>
-                        <th
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <label class="flex items-center justify-center gap-2">
-                            <input type="checkbox" checked class="d-checkbox" />
-                            Edit
-                          </label>
-                        </th>
-                        <th
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <label class="flex items-center justify-center gap-2">
-                            <input type="checkbox" class="d-checkbox" />
-                            Download
-                          </label>
-                        </th>
-                        <th
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <label class="flex items-center justify-center gap-2">
-                            <input type="checkbox" checked class="d-checkbox" />
-                            Delete
-                          </label>
-                        </th>
-                      </tr>
-                    </thead>
-
-                    <tbody class="role">
-                      <tr class="bg-c-table-yellow">
-                        <th class="border border-gray-300 px-4 py-2">
-                          <label class="flex items-center justify-start gap-2">
-                            <input type="checkbox" checked class="d-checkbox" />
-                            <span class="font-normal">Admin</span>
-                          </label>
-                        </th>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" checked class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" checked class="d-checkbox" />
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="border border-gray-300 px-4 py-2">
-                          <label class="flex items-center justify-start gap-2">
-                            <input type="checkbox" checked class="d-checkbox" />
-                            <span class="font-normal">User 1</span>
-                          </label>
-                        </th>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" checked class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="border border-gray-300 px-4 py-2">
-                          <label class="flex items-center justify-start gap-2">
-                            <input type="checkbox" checked class="d-checkbox" />
-                            <span class="font-normal">User 2</span>
-                          </label>
-                        </th>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" checked class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                      </tr>
-                      <tr class="bg-c-table-yellow">
-                        <th class="border border-gray-300 px-4 py-2">
-                          <label class="flex items-center justify-start gap-2">
-                            <input type="checkbox" class="d-checkbox" />
-                            <span class="font-normal">HR</span>
-                          </label>
-                        </th>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="border border-gray-300 px-4 py-2">
-                          <label class="flex items-center justify-start gap-2">
-                            <input type="checkbox" class="d-checkbox" />
-                            <span class="font-normal">User 1</span>
-                          </label>
-                        </th>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <th class="border border-gray-300 px-4 py-2">
-                          <label class="flex items-center justify-start gap-2">
-                            <input type="checkbox" class="d-checkbox" />
-                            <span class="font-normal">User 2</span>
-                          </label>
-                        </th>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                        <td
-                          class="border border-gray-300 px-4 py-2 text-center"
-                        >
-                          <div class="flex justify-center items-center">
-                            <input type="checkbox" class="d-checkbox" />
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <div class="flex justify-end mt-3">
-                    <button
-                      class="bg-c-black hover-bg-c-black text-white rounded-full w-32 py-2 text-sm"
-                    >
-                      Save
+                <!-- Modal Header -->
+                <div class="flex justify-between items-center p-4 border-b">
+                    <h2 class="text-lg font-bold"><i class="ri-settings-3-fill"></i> Orient drop</h2>
+                    <button id="closeModal" class="text-gray-500 hover:text-gray-800">
+                        <i class="ri-close-fill text-2xl"></i>
                     </button>
-                  </div>
                 </div>
-              </div>
+                
+                <!-- Modal Content -->
+                <div class="p-4">
+                    <div class="pb-2 relative">
+                        <div id="customSelect" class="mt-1 block w-full border border-gray-300 rounded-lg sm:text-sm h-8 pl-3 cursor-pointer flex items-center justify-between">
+                            <span id="selectedText">Select group</span>
+                            <span class="pr-2 text-2xl"><i class="ri-arrow-down-s-line"></i></span>
+                        </div>
+                        <div id="dropdown" class="role absolute mt-1 w-full border border-gray-300 rounded-lg bg-white hidden">
+                            <label class="flex items-center p-2">
+                                <input type="checkbox" class="mr-2 d-checkbox" checked value="Sales dept." /> Sales dept.
+                            </label>
+                            <hr>
+                            <label class="flex items-center p-2">
+                                <input type="checkbox" class="mr-2 d-checkbox" value="Marketing dept." /> Marketing dept.
+                            </label>
+                            <hr>
+                            <label class="flex items-center p-2">
+                                <input type="checkbox" class="mr-2 d-checkbox" checked value="HR dept." /> HR dept.
+                            </label>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Table -->
+                    <div id="tableContainer" class="overflow-x-auto transition-all">
+                        <table class="w-full text-left border-collapse border border-gray-200">
+                            <thead class="bg-c-gray-4 role">
+                                <tr>
+                                    <th class="border border-gray-300 px-4 py-2 text-center ">
+                                        <label class="flex items-center justify-center gap-2">
+                                            <input type="checkbox" class="d-checkbox "> Select all
+                                        </label>
+                                    </th>
+                                    <th class="border border-gray-300 px-4 py-2 text-center ">
+                                        <label class="flex items-center justify-center gap-2">
+                                            <input type="checkbox" class="d-checkbox"> View
+                                        </label>
+                                    </th>
+                                    <th class="border border-gray-300 px-4 py-2 text-center ">
+                                        <label class="flex items-center justify-center gap-2">
+                                            <input type="checkbox" checked class="d-checkbox"> Edit
+                                        </label>
+                                    </th>
+                                    <th class="border border-gray-300 px-4 py-2 text-center ">
+                                        <label class="flex items-center justify-center gap-2">
+                                            <input type="checkbox" class="d-checkbox"> Download
+                                        </label>
+                                    </th>
+                                    <th class="border border-gray-300 px-4 py-2 text-center ">
+                                        <label class="flex items-center justify-center gap-2">
+                                            <input type="checkbox" checked class="d-checkbox"> Delete
+                                        </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            
+                            <tbody class="role">
+                              <tr class="bg-c-table-yellow">
+                                <th class="border border-gray-300 px-4 py-2 ">
+                                    <label class="flex items-center justify-start gap-2">
+                                        <input type="checkbox" checked class="d-checkbox">
+                                        <span class="font-normal">Admin</span>
+                                    </label>
+                                </th>
+                                <td class="border border-gray-300 px-4 py-2 text-center">
+                                    <div class="flex justify-center items-center">
+                                        <input type="checkbox" class="d-checkbox">
+                                    </div>
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2 text-center">
+                                    <div class="flex justify-center items-center">
+                                        <input type="checkbox" class="d-checkbox">
+                                    </div>
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2 text-center">
+                                    <div class="flex justify-center items-center">
+                                        <input type="checkbox" checked class="d-checkbox">
+                                    </div>
+                                </td>
+                                <td class="border border-gray-300 px-4 py-2 text-center">
+                                    <div class="flex justify-center items-center">
+                                        <input type="checkbox" checked class="d-checkbox">
+                                    </div>
+                                </td>
+                            </tr>
+                                <tr>
+                                    <th class="border border-gray-300 px-4 py-2">
+                                        <label class="flex items-center justify-start gap-2">
+                                            <input type="checkbox" checked class="d-checkbox">
+                                            <span class="font-normal">User 1</span>
+                                        </label>
+                                    </th>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" checked class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox"  class="d-checkbox">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th class="border border-gray-300 px-4 py-2">
+                                        <label class="flex items-center justify-start gap-2">
+                                            <input type="checkbox" checked class="d-checkbox">
+                                            <span class="font-normal">User 2</span>
+                                        </label>
+                                    </th>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" checked class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                  </tr>
+                                <tr class="bg-c-table-yellow">
+                                    <th class="border border-gray-300 px-4 py-2">
+                                        <label class="flex items-center justify-start gap-2">
+                                            <input type="checkbox" class="d-checkbox">
+                                            <span class="font-normal">HR</span>
+                                        </label>
+                                    </th>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox"  class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                    <td class="border border-gray-300 px-4 py-2 text-center">
+                                        <div class="flex justify-center items-center">
+                                            <input type="checkbox" class="d-checkbox">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                  <th class="border border-gray-300 px-4 py-2">
+                                      <label class="flex items-center justify-start gap-2">
+                                          <input type="checkbox"  class="d-checkbox">
+                                          <span class="font-normal">User 1</span>
+                                      </label>
+                                  </th>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox" class="d-checkbox">
+                                      </div>
+                                  </td>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox"  class="d-checkbox">
+                                      </div>
+                                  </td>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox" class="d-checkbox">
+                                      </div>
+                                  </td>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox"  class="d-checkbox">
+                                      </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <th class="border border-gray-300 px-4 py-2">
+                                      <label class="flex items-center justify-start gap-2">
+                                          <input type="checkbox"  class="d-checkbox">
+                                          <span class="font-normal">User 2</span>
+                                      </label>
+                                  </th>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox" class="d-checkbox">
+                                      </div>
+                                  </td>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox"  class="d-checkbox">
+                                      </div>
+                                  </td>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox" class="d-checkbox">
+                                      </div>
+                                  </td>
+                                  <td class="border border-gray-300 px-4 py-2 text-center">
+                                      <div class="flex justify-center items-center">
+                                          <input type="checkbox" class="d-checkbox">
+                                      </div>
+                                  </td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
+        </div> 
         </div>
       </div>
     </main>
-    
+    <script>
+      const customSelect = document.getElementById('customSelect');
+const dropdown = document.getElementById('dropdown');
+const selectedText = document.getElementById('selectedText');
+const tableContainer = document.getElementById('tableContainer');
+
+customSelect.addEventListener('click', () => {
+  dropdown.classList.toggle('hidden');
+  
+  if (!dropdown.classList.contains('hidden')) {
+      // Add space when dropdown is open
+      tableContainer.style.marginTop = `${dropdown.offsetHeight}px`;
+  } else {
+      // Reset space when dropdown is closed
+      tableContainer.style.marginTop = '0px';
+  }
+});
+
+// Close dropdown when clicking outside
+document.addEventListener('click', (e) => {
+  if (!customSelect.contains(e.target) && !dropdown.contains(e.target)) {
+      dropdown.classList.add('hidden');
+      tableContainer.style.marginTop = '0px';
+  }
+});
+
+  </script>
     <script src="script/sidebar.js"></script>
     <script src="script/orient-drop.js"></script>
   </body>
